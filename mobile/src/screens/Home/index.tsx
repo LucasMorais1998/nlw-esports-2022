@@ -1,7 +1,7 @@
 import { useNavigation } from "@react-navigation/native";
 import { useEffect, useState } from "react";
 import { FlatList, Image } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context/lib/typescript/SafeAreaView";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 import logoImg from "../../assets/logo-nlw-esports.png";
 
@@ -17,19 +17,9 @@ const Home = () => {
   const navigation = useNavigation();
 
   useEffect(() => {
-    const getData = async () => {
-      try {
-        const response = await fetch(`http://192.198.0.1:3333/games`);
-
-        const data = await response.json();
-
-        setGames(data);
-      } catch (err) {
-        console.error(err);
-      }
-    };
-
-    getData();
+    fetch('http://192.168.0.1:3333/games')
+      .then(response => response.json())
+      .then(data => setGames(data))
   }, []);
 
   const handleOpenGaming = ({ id, title, bannerUrl }: IGameCardProps) => {

@@ -3,14 +3,13 @@ import { StyleSheet } from "react-native";
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignContent: "center",
-    justifyContent: "center"
+    alignItems: "center",
+    justifyContent: "center",
   },
 
   logo: {
     width: 214,
     height: 120,
-    
     marginTop: 74,
     marginBottom: 48,
   },
