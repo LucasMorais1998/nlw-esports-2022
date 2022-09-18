@@ -4,11 +4,11 @@ import backgroundImg from "../../assets/background-galaxy.png";
 
 import { styles } from "./styles";
 
-interface Props {
+interface IProps {
   children: React.ReactNode;
 }
 
-export function Background({ children }: Props) {
+const Background = ({ children }: IProps) => {
   return (
     <ImageBackground
       source={backgroundImg}
@@ -18,4 +18,6 @@ export function Background({ children }: Props) {
       {children}
     </ImageBackground>
   );
-}
+};
+
+export { Background };
